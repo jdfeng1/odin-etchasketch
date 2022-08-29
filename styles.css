@@ -49,3 +49,10 @@ h1 {
     height: 500px;
     background-color: white;
 }
+
+.grid-item:hover {
+    background-color: black;
+}
+.grid-item:active {
+    background-color: black;
+}
