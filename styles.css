@@ -1,7 +1,28 @@
 html {
     box-sizing: border-box;
+    font-family: 'Michroma', sans-serif;
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(80, 80, 80);
+    color: wheat;
+    margin: 0;
+    padding: 20px;
+}
+
+.body-div {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color: wheat;
+    color:rgb(80, 80, 80);
 }
