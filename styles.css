@@ -158,11 +158,6 @@ button:not(:active):not(.no-hover):hover {
     background-color: rgb(255, 255, 255, 0);
 }
 
-.grid-item:hover {
-    opacity: 1;
-    background-color: var(--pen-color);
-}
-
 .slide-container {
     padding-top: 20px;
     display: flex;
