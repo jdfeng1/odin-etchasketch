@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-family: 'Michroma', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 *, *:before, *:after {
@@ -30,7 +30,7 @@ h1 {
     margin: 0;
     background-color: lightgrey;
     color:var(--dark-bg);
-    padding: 0 8% 0 12%;
+    padding: 0 8% 0 15%;
 }
 .sidebar {
     flex: 1;
@@ -41,6 +41,7 @@ h1 {
     justify-content: center;
     background-color: mediumaquamarine;
     padding-bottom: 10%;
+    font-weight: bold;
 }
 button {
     width: 80%;
@@ -49,23 +50,30 @@ button {
     height: 50px;
     border-radius: 15px;
     border: 2px solid lightgrey;
-    font-size: 15px;
-    font-family: 'Michroma', sans-serif;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 button:hover {
     transform: scaleY(1.1);
     color: mediumvioletred;
     border-color: mediumvioletred;
+    font-weight: bold;
 }
 
+.toggled {
+    color:aqua;
+    border-color: aqua;
+    transform: scaleY(1.1);
+}
 
 .label {
-    width: 120%;
+    width: 200%;
     padding-bottom: 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .colorpicker {
