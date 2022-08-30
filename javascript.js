@@ -31,8 +31,6 @@ for (let i = 0; i < slidePx.length; i++) {
     slidePx[i].textContent = slider.value;
 }
 
-
-
 function toggle(button) {
     const buttons = Array.from(document.querySelectorAll('button'));
     buttons.forEach(b => {
@@ -82,7 +80,6 @@ let changeColor = (e) => {
             e.target.style.backgroundColor = penColor;
             e.target.style.opacity = 1;
         }
-        gridContainer.addEventListener('mouseover', changeColor);
     }
 
     if (shaderButton.value == "ON") {
@@ -92,7 +89,6 @@ let changeColor = (e) => {
                 e.target.style.opacity -= -0.2;
             }
         }
-        gridContainer.addEventListener('mouseover', changeColor);
     }
 
     if (rainbowButton.value == "ON") {
@@ -101,8 +97,11 @@ let changeColor = (e) => {
             e.target.style.backgroundColor = "#" + randomColor;
             e.target.style.opacity = 1;
         }
-        gridContainer.addEventListener('mouseover', changeColor);
+        
     }
+
+    gridContainer.addEventListener('mouseover', changeColor);
+    gridContainer.addEventListener('touchmove', changeColor);
 }
   
 
@@ -114,6 +113,7 @@ let sliderDisplay = () => {
 
 let stopColor = () => {
     gridContainer.removeEventListener('mouseover', changeColor);
+    gridContainer.removeEventListener('touchmove', changeColor);
 }
 
 let showGrid = () => {
@@ -126,6 +126,8 @@ gridButton.addEventListener('click', showGrid);
 
 gridContainer.onmousedown = changeColor;
 gridContainer.onmouseup = stopColor;
+gridContainer.ontouchstart = changeColor;
+gridContainer.ontouchend = stopColor;
 
 clearButton.addEventListener('click', changeRowColumn);
 slider.onchange = changeRowColumn;

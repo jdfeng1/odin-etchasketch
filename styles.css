@@ -86,12 +86,13 @@ button {
     
 }
 
-button:not(:active):hover {
+button:not(:active):not(.no-hover):hover {
     transform: scaleY(1.1);
     color: mediumvioletred;
     border-color: mediumvioletred;
     font-weight: bold;
 }
+
 
 
 .toggled {
@@ -209,4 +210,184 @@ button:not(:active):hover {
 .resolution-display {
     font-size: 24px;
     padding-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+    .content {
+        flex: 3;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content {
+        flex: 4;
+    }
+    .label {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        flex: 4;
+    }
+    .body-div {
+        flex-direction: column;
+        padding: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 5px 5% 5px 5%;
+    }
+    .colorbox {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .label {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 625px) {
+    .content {
+        flex: 4;
+    }
+    .body-div {
+        flex-direction: column;
+        padding: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 5% 5px 5%;
+        gap: 20px;
+    }
+    .colorbox {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .label {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .content {
+        flex: 4;
+    }
+    .body-div {
+        flex-direction: column;
+        padding: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 8% 5px 8%;
+        gap: 10px;
+    }
+    .colorbox {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .label {
+        width: 100%;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 500px) {
+    .content {
+        flex: 4;
+    }
+    .body-div {
+        flex-direction: column;
+        padding: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 12% 20px 12%;
+        gap: 0;
+    }
+    .colorbox {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .label {
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+    }
+    .grid-generator {
+        width: 400px;
+        height: 400px;
+    }
+    .grid-overlay {
+        width: 400px;
+        height: 400px;
+    }
+    button {
+        transform: rotate(90deg);
+        margin: -1em;
+    }
+    button:not(:active):not(.no-hover):hover {
+        transform: rotate(90deg);
+        
+    }
+}
+@media screen and (max-width: 425px) {
+    .content {
+        flex: 4;
+    }
+    .body-div {
+        flex-direction: column;
+        padding: 0;
+    }
+    .sidebar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 12% 20px 12%;
+        gap: 0;
+    }
+    .colorbox {
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+    }
+    .colorpicker {
+        margin-left: -1em;
+        margin-right: 1em;
+    }
+    .label {
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+    }
+    .grid-generator {
+        width: 300px;
+        height: 300px;
+    }
+    .grid-overlay {
+        width: 300px;
+        height: 300px;
+    }
+    button {
+        transform: rotate(90deg);
+        margin: -1em;
+    }
+    button:not(:active):not(.no-hover):hover {
+        transform: rotate(90deg);
+        
+    }
 }
