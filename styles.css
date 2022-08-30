@@ -11,6 +11,7 @@ html {
     --grid-rows: 4;
     --grid-columns: 4;
     --dark-bg: rgb(80, 80, 80);
+    --pen-color: black;
 }
 
 body {
@@ -120,7 +121,7 @@ button:not(:active):hover {
 }
 
 .grid-item:hover {
-    background-color: black;
+    background-color: var(--pen-color);
 }
 
 .slide-container {

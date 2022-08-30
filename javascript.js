@@ -58,14 +58,36 @@ let changeRowColumn = () => {
     }
 }
 
+colorBox.addEventListener('input', () => rootStyles.setProperty('--pen-color', colorBox.value));
 
-let penColor = colorBox.value;
+
 
 let changeColor = (e) => {
-    penColor = colorBox.value;
+
     if (pencilButton.value == "ON") {
-        if(e.target.className = 'grid-item');
-        e.target.style.backgroundColor = penColor;
+        let penColor = colorBox.value;
+        if(e.target.className = 'grid-item') {
+            e.target.style.backgroundColor = penColor;
+        }
+        gridContainer.addEventListener('mouseover', changeColor);
+    }
+
+    if (brushButton.value == "ON") {
+
+        if(e.target.className = 'grid-item') {
+            
+            e.target.style.backgroundColor = penColor;
+            e.target.style.opacity = 0.2;
+            opacity += 0.2;
+        }
+        gridContainer.addEventListener('mouseover', changeColor);
+    }
+
+    if (rainbowButton.value == "ON") {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        if(e.target.className = 'grid-item') {
+            e.target.style.backgroundColor = "#" + randomColor;
+        }
         gridContainer.addEventListener('mouseover', changeColor);
     }
 }
