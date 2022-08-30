@@ -24,7 +24,18 @@ for (let i = 0; i < slidePx.length; i++) {
     slidePx[i].textContent = slider.value;
 }
 
+
+
 function toggle(button) {
+    const buttons = Array.from(document.querySelectorAll('button'));
+    buttons.forEach(b => {
+        if (b.className == 'toggled') {
+            b.classList.remove('toggled');
+            b.value = 'OFF';
+        }
+        return;
+    });
+
     if (button.value == "OFF") {   
       button.value = "ON";
       button.classList.add('toggled');
@@ -47,13 +58,16 @@ let changeRowColumn = () => {
     }
 }
 
+
 let penColor = colorBox.value;
 
 let changeColor = (e) => {
     penColor = colorBox.value;
-    if(e.target.className = 'grid-item');
-    e.target.style.backgroundColor = penColor;
-    gridContainer.addEventListener('mouseover', changeColor);
+    if (pencilButton.value == "ON") {
+        if(e.target.className = 'grid-item');
+        e.target.style.backgroundColor = penColor;
+        gridContainer.addEventListener('mouseover', changeColor);
+    }
 }
   
 
@@ -66,10 +80,9 @@ let sliderDisplay = () => {
 let stopColor = () => {
     gridContainer.removeEventListener('mouseover', changeColor);
 }
+
 gridContainer.onmousedown = changeColor;
 gridContainer.onmouseup = stopColor;
-
-
 
 clearButton.addEventListener('click', changeRowColumn);
 slider.onchange = changeRowColumn;
