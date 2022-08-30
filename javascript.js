@@ -36,6 +36,7 @@ let changeRowColumn = () => {
 let changeColor = (e) => {
     if(e.target.className = 'grid-item');
     e.target.style.backgroundColor = 'black';
+    gridContainer.addEventListener('mouseover', changeColor);
 }
   
 
@@ -45,13 +46,10 @@ let sliderDisplay = () => {
     }
 }
 
-let moveColor = () => {
-    gridContainer.addEventListener('mouseover', changeColor);
-}
 let stopColor = () => {
     gridContainer.removeEventListener('mouseover', changeColor);
 }
-gridContainer.onmousedown = moveColor;
+gridContainer.onmousedown = changeColor;
 gridContainer.onmouseup = stopColor;
 
 slider.onchange = changeRowColumn;
