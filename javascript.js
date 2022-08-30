@@ -8,7 +8,7 @@ let slider = document.querySelector('#px-range');
 let slidePx = document.querySelectorAll('.px');
 let sliderVal = slider.value;
 
-let brushButton = document.querySelector('#brush-mode');
+let shaderButton = document.querySelector('#shader-mode');
 let pencilButton = document.querySelector('#pencil-mode');
 let rainbowButton = document.querySelector('#rainbow-mode');
 let clearButton = document.querySelector("#clear");
@@ -39,11 +39,9 @@ function toggle(button) {
     if (button.value == "OFF") {   
       button.value = "ON";
       button.classList.add('toggled');
-      console.log(button.value);
     } else { 
       button.value = "OFF";
       button.classList.remove('toggled');
-      console.log(button.value);
     }
 }
 
@@ -54,7 +52,7 @@ let changeRowColumn = () => {
     rootStyles.setProperty('--grid-columns', sliderVal);
     for (let i = 0; i < sliderVal*sliderVal; i++) {
         let cell = document.createElement("div");
-        gridContainer.appendChild(cell).className = `grid-item`;// grid${i}`;
+        gridContainer.appendChild(cell).className = `grid-item`;
     }
 }
 
@@ -64,21 +62,21 @@ colorBox.addEventListener('input', () => rootStyles.setProperty('--pen-color', c
 
 let changeColor = (e) => {
 
+    let penColor = colorBox.value;
     if (pencilButton.value == "ON") {
-        let penColor = colorBox.value;
         if(e.target.className = 'grid-item') {
             e.target.style.backgroundColor = penColor;
+            e.target.style.opacity = 1;
         }
         gridContainer.addEventListener('mouseover', changeColor);
     }
 
-    if (brushButton.value == "ON") {
-
+    if (shaderButton.value == "ON") {
         if(e.target.className = 'grid-item') {
-            
             e.target.style.backgroundColor = penColor;
-            e.target.style.opacity = 0.2;
-            opacity += 0.2;
+            if (e.target.style.opacity < 1) {
+                e.target.style.opacity -= -0.2;
+            }
         }
         gridContainer.addEventListener('mouseover', changeColor);
     }
@@ -87,6 +85,7 @@ let changeColor = (e) => {
         const randomColor = Math.floor(Math.random()*16777215).toString(16);
         if(e.target.className = 'grid-item') {
             e.target.style.backgroundColor = "#" + randomColor;
+            e.target.style.opacity = 1;
         }
         gridContainer.addEventListener('mouseover', changeColor);
     }

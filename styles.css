@@ -120,7 +120,12 @@ button:not(:active):hover {
     box-shadow: 5px 5px 8px #bbbbbb;
 }
 
+.grid-item {
+    opacity: 0;
+}
+
 .grid-item:hover {
+    opacity: 1;
     background-color: var(--pen-color);
 }
 
