@@ -54,19 +54,20 @@ button {
     font-family: 'Raleway', sans-serif;
     transition: all 0.3s ease;
     cursor: pointer;
+    
 }
 
-button:hover {
+button:not(:active):hover {
     transform: scaleY(1.1);
     color: mediumvioletred;
     border-color: mediumvioletred;
     font-weight: bold;
 }
 
+
 .toggled {
-    color:aqua;
-    border-color: aqua;
-    transform: scaleY(1.1);
+    color: palevioletred;
+    border: 3px solid palevioletred;
 }
 
 .label {
@@ -123,7 +124,7 @@ button:hover {
 }
 
 .slide-container {
-    padding: 20px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,4 +165,9 @@ button:hover {
     height: 25px;
     background: mediumseagreen;
     cursor: pointer;
+}
+
+.resolution-display {
+    font-size: 24px;
+    padding-top: 10px;
 }

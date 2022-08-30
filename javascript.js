@@ -32,6 +32,18 @@ let changeRowColumn = () => {
     }
 }
 
+function toggle(button) {
+    if (button.value == "OFF") {   
+      button.value = "ON";
+      button.classList.add('toggled');
+      console.log(button.value);
+    } else { 
+      button.value = "OFF";
+      button.classList.remove('toggled');
+      console.log(button.value);
+    }
+  }
+  
 
 let changeColor = (e) => {
     if(e.target.className = 'grid-item');
@@ -51,6 +63,10 @@ let stopColor = () => {
 }
 gridContainer.onmousedown = changeColor;
 gridContainer.onmouseup = stopColor;
+
+/*const buttons = Array.from(document.querySelectorAll('button'));
+  buttons.forEach(play => play.addEventListener('click', (e) => e.target.classList.add('toggled')));*/
+
 
 
 clearButton.addEventListener('click', changeRowColumn);
