@@ -4,11 +4,11 @@ let rootStyles = root.style;
 let gridRows = getComputedStyle(root).getPropertyValue('--grid-rows');
 let gridCols = getComputedStyle(root).getPropertyValue('--grid-columns');
 
-
-
 let slider = document.querySelector('#px-range');
 let slidePx = document.querySelectorAll('.px');
 let sliderVal = slider.value;
+
+let clearButton = document.querySelector("#clear");
 
 rootStyles.setProperty('--grid-rows', sliderVal);
 rootStyles.setProperty('--grid-columns', sliderVal);
@@ -52,6 +52,8 @@ let stopColor = () => {
 gridContainer.onmousedown = changeColor;
 gridContainer.onmouseup = stopColor;
 
+
+clearButton.addEventListener('click', changeRowColumn);
 slider.onchange = changeRowColumn;
 slider.oninput = sliderDisplay;
 

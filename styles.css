@@ -20,7 +20,7 @@ body {
 
 h1 {
     text-align: center;
-    color: wheat;
+    color: lightgrey;
     margin: 0;
     padding: 20px;
 }
@@ -28,32 +28,66 @@ h1 {
 .body-div {
     display: flex;
     margin: 0;
-    background-color: wheat;
+    background-color: lightgrey;
     color:var(--dark-bg);
+    padding: 0 8% 0 12%;
 }
 .sidebar {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
-    background-color: mediumseagreen;
+    background-color: mediumaquamarine;
+    padding-bottom: 10%;
+}
+button {
+    width: 80%;
+    background-color: var(--dark-bg);
+    color: lightgrey;
+    height: 50px;
+    border-radius: 15px;
+    border: 2px solid lightgrey;
+    font-size: 15px;
+    font-family: 'Michroma', sans-serif;
+    transition: all 0.3s ease;
 }
 
+button:hover {
+    transform: scaleY(1.1);
+    color: mediumvioletred;
+    border-color: mediumvioletred;
+}
+
+
 .label {
-    width: 60%;
+    width: 120%;
+    padding-bottom: 20px;
     text-align: center;
+    font-size: 20px;
 }
 
 .colorpicker {
     display: flex;
-    align-items: flex-start;
-    width: 80%;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
 }
 .colorbox {
-    width: 40%;
+    appearance: none;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.colorbox::-webkit-color-swatch {
+    border-radius: 15px;
 }
 
 .content {
@@ -71,6 +105,9 @@ h1 {
     width: 500px;
     height: 500px;
     background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 5px 5px 8px #bbbbbb;
 }
 
 .grid-item:hover {
@@ -102,14 +139,14 @@ h1 {
     appearance: none;
     width: 15px;
     height: 15px;
-    background: mediumseagreen;
+    background: mediumaquamarine;
     cursor: pointer;
     
     transition: all 0.3s ease;
     border-radius: 1px;
 }
 .slider::-webkit-slider-thumb:hover,.slider::-webkit-slider-thumb:active {
-    background: lightseagreen;
+    background: mediumvioletred;
     transform: scale(1.5);
 
 }
