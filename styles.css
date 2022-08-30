@@ -33,6 +33,8 @@ h1 {
     color:var(--dark-bg);
     padding: 0 8% 0 15%;
 }
+
+
 .sidebar {
     flex: 1;
     display: flex;
